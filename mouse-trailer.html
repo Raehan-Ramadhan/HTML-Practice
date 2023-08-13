@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(20, 20, 20);
+            height: 100vh;
+            margin: 0px;
+        }
+
+        #trailer {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border-radius: 20px;
+
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: 10000;
+
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 500ms ease;
+        }
+
+        body:hover > #trailer {
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            trailer = document.getElementById("trailer");
+        
+            const animateTrailer = (e, interacting) => {
+                const   x = e.clientX - trailer.offsetWidth / 2,
+                        y = e.clientY - trailer.offsetHeight / 2;
+
+                const keyframes = {
+                    transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
+                }
+
+                trailer.animate(keyframes, {
+                    duration: 800,
+                    fill: "forwards"
+                });
+            }
+
+            window.onmousemove = e => {
+                const   interactable = e.target.closest(".interactable"),
+                        interacting = interactable !== null;
+                        
+                animateTrailer(e, interacting);
+            }
+        }
+    </script>
+
+</head>
+
+
+<body>
+    
+    <div id="trailer">
+        
+    </div>
+
+</body>
+</html>
