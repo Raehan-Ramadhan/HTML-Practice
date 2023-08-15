@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style type="text/css">
+        body {
+            background-color: black;
+            height: 100vh;  
+            display: grid;
+            place-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #logo {
+            position: relative;
+            width: 300px;
+        }
+
+        #logo > img {
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        window.onload = function() {
+            const   logos = document.getElementById("logo"),
+                    images = logos.querySelectorAll("img"),
+                    distort = 20;
+
+            window.onmousemove = e => {
+                const   rect = images[1].getBoundingClientRect(),
+                        x = ((e.clientX - rect.left - (rect.width / 2)) / window.innerWidth) * distort,
+                        y = ((e.clientY - rect.top - (rect.height / 2)) / window.innerHeight) * distort;
+
+
+                images.forEach((images,index) => {
+                    const keyframes = {
+                    transform: `translate(${x*index}px, ${y*index}px)`
+                    }
+
+                    images.animate(keyframes, {
+                        duration: 500,
+                        fill: "forwards",
+                        easing: "ease" 
+                    })
+                });
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="logo">
+        <img src="https://cdn.discordapp.com/attachments/598648077078757376/1141024075565777026/graycat1.svg" draggable="false" />
+        <img src="https://cdn.discordapp.com/attachments/598648077078757376/1141024075989385400/graycat2.svg" draggable="false" />
+        <img src="https://cdn.discordapp.com/attachments/598648077078757376/1141024076849234032/graycat3.svg" draggable="false" />
+        <img src="https://cdn.discordapp.com/attachments/598648077078757376/1141024077256065174/graycat4.svg" draggable="false" />
+        <img src="https://cdn.discordapp.com/attachments/598648077078757376/1141024077843279964/graycat5.svg" draggable="false" />
+        <img src="https://cdn.discordapp.com/attachments/598648077078757376/1141024078216577095/graycat6.svg" draggable="false" />
+    </div>
+</body>
+</html>
