@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: rgb(10, 10, 10);
+            display: flex;
+            height: 100vh;
+            overflow-x: hidden;
+            margin: 0px;
+            padding: 0px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-width: 922px;
+            width: calc(100% - 20px);
+            justify-content:     center;
+        }
+
+        .card {
+            position: relative;
+            height: 262px;
+            width: 302px;
+            background-color: rgb(255, 255, 255, 0.1);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .card > .card-content {
+            border-radius: inherit;
+            position: absolute;
+            inset: 1px;
+            background-color: rgb(20, 20, 20);
+            z-index: 2;
+        }
+
+        @media screen and (max-width: 642px) {
+            .card {
+                display: flex;
+                width: 45%;
+                height: auto;
+                aspect-ratio: 15/13;
+            }
+        }
+
+        .card:hover::before {
+            opacity: 1; 
+        }
+
+        #cards:hover > .card::after {
+            opacity: 1;
+        }
+
+        .card::before, .card::after {
+            content: "";
+            border-radius: inherit;
+            transition: 200ms;
+            height: 100%;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .card::before {
+            background: radial-gradient(
+                800px circle at var(--mouse-x) var(--mouse-y),
+                rgb(255, 255, 255, 0.1),
+                transparent 40%
+            ); 
+            z-index: 3;
+        }
+
+        .card::after {
+            background: radial-gradient(
+                400px circle at var(--mouse-x) var(--mouse-y),
+                rgb(255, 255, 255, 0.5),
+                transparent 40%
+            );
+            z-index: 1;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+            window.onmousemove = e => {
+                for(const card of document.querySelectorAll(".card")) {
+                    const   rect = card.getBoundingClientRect(),
+                            x = e.clientX - rect.left,
+                            y = e.clientY - rect.top;
+                    card.style.setProperty("--mouse-x", `${x}px`);
+                    card.style.setProperty("--mouse-y", `${y}px`);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="cards">
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+    </div>
+</body>
+</html>
