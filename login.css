@@ -1,0 +1,134 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "poppins", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	width: 100vw;
+	justify-content: center;
+	align-content: center;
+	background: url(https://source.unsplash.com/PAykYb-8Er8);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.form-box {
+	position: relative;
+	width: 400px;
+	height: 450px;
+	background: transparent;
+	border-radius: 40px;
+	border: 2px solid white;
+	backdrop-filter: blur(15px);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+h2 {
+	color: white;
+	font-size: 2em;
+	text-align: center;
+}
+
+.inputbox {
+	position: relative;
+	margin: 30px 0;
+	width: 310px;
+	border-bottom: 2px solid white;
+}
+
+.inputbox label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translatey(-50%);
+	color: white;
+	font-size: 1em;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+	top: -5px;
+}
+
+.inputbox input {
+	width: 100%;
+	height: 50px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	padding: 0 35px 0 5px;
+	color: white;
+}
+
+ion-icon {
+	position: absolute;
+	right: 8px;
+	color: white;
+	font-size: 1.2em;
+	top: 20px;
+}
+
+.forget {
+	display: flex;
+	justify-content: center;
+	color: white;
+	margin: -15px 0 15px;
+	font-size: 0.9em;
+}
+
+.forget label input {
+	margin-right: 3px;
+}
+
+.forget label a {
+	margin-left: 4px;
+	color: white;
+	text-decoration: none;
+	font-weight: 1000;
+}
+
+.forget label a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+button {
+	width: 100%;
+	height: 40px;
+	border-radius: 40px;
+	background-color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+.register {
+	font-size: 0.9em;
+	color: white;
+	text-align: center;
+	margin: 25px 0 10px;
+}
+
+.register p a {
+	margin-left: 4px;
+	text-decoration: none;
+	color: white;
+	font-weight: 1000;
+}
+
+.register p a:hover {
+	color: blue;
+	text-decoration: underline;
+}
