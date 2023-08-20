@@ -1,0 +1,14 @@
+body {
+	background-color: #131316;
+	color: white;
+	font-family: 'Poppins' sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+section {
+	display: grid;
+	place-items: center;
+	align-content: center;
+	min-height: 100vh;
+}
