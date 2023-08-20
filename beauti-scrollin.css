@@ -9,15 +9,29 @@ body {
 section {
 	display: grid;
 	place-items: center;
-	align-content: center;
-	min-height: 100vh;
+	place-content: center;
+	min-height: 101vh;
 }
 
 .hidden {
 	opacity: 0;
-	transition: all 5s;
+    filter: blur(5px);
+	transition: all 1s;
+    transform: translateX(-100%);
 }
 
 .show {
 	opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.logos {
+    display: flex;
+}
+
+.logo {
+    width: 150px;
+    aspect-ratio: 1/1;
+    transition-delay: calc(100ms * var(--order));
 }
