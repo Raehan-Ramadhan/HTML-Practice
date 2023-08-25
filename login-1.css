@@ -42,12 +42,12 @@ header {
 	left: 0;
 	bottom: 0;
 	border-radius: 5px;
-	transform: scalex(0);
+	transform: scaleX(0);
 	transition: .2s;
 }
 
 .navigation a:hover::after {
-	transform: scalex(1);
+	transform: scaleX(1);
 }
 
 .navigation .btnLogin-popup {
@@ -68,3 +68,15 @@ header {
 .navigation .btnLogin-popup:hover {
 	color: #141414;
 	background-color: white;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: 
+		url(https://source.unsplash.com/HQPJEEjHqSE)
+		no-repeat center top/cover;
+	
+}
