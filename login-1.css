@@ -75,6 +75,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	background-color: gray;
 	background: url(https://source.unsplash.com/CEx86maLUSc) no-repeat center
 		top/cover;
 }
@@ -84,4 +85,27 @@ body {
 		background: url(https://source.unsplash.com/gKXKBY-C-Dk) no-repeat center
 			top/cover;
 	}
+}
+
+.formbox {
+	display: inline-flex;
+	flex-direction: column;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 1px solid white;
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(8px);
+}
+
+.formbox h2 {
+	display: flex;
+	height: 80px;
+	flex-direction: column;
+	justify-content: center;
+	color: #FFF;
+	font-size: 30px;
+	font-weight: 600;
 }
