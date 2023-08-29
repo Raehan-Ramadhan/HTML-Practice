@@ -140,3 +140,14 @@ body {
 	background-color: transparent;
 	border-bottom: 1px solid white;
 }
+
+ion-icon {
+	color: white;
+}
+
+.remember-forgot {
+	display: flex;
+	padding: 5px;
+	align-items: center;
+	justify-content: space-between;
+}
