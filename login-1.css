@@ -196,3 +196,15 @@ button.btn:hover {
 	font-size: 12px;
 	font-weight: 400;
 }
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+a {
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+}
