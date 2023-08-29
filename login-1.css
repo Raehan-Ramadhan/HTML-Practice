@@ -151,3 +151,17 @@ ion-icon {
 	align-items: center;
 	justify-content: space-between;
 }
+
+label {
+	color: #fff;
+	font-size: 12px;
+	font-weight: 400;
+	display: flex;
+	column-gap: 5px;
+	align-items: center;
+}
+
+label input {
+	width: 14px;
+	height: 14px;
+}
