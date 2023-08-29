@@ -207,7 +207,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-a {
+.wrapper a {
 	color: #fff;
 	font-size: 12px;
 	font-weight: 600;
