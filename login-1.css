@@ -184,3 +184,15 @@ button.btn:hover {
 	color: black;
 	background-color: white;
 }
+
+.login-register p {
+	display: flex;
+	padding: 5px;
+	justify-content: center;
+	gap: 10px;
+	align-items: center;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 400;
+}
