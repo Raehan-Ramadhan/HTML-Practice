@@ -109,3 +109,20 @@ body {
 	font-size: 30px;
 	font-weight: 600;
 }
+
+.input-box {
+	display: flex;
+	padding: 35px 5px 10px 5px;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 10px;
+}
+
+label {
+	position: absolute;
+	left: 5px;
+	bottom: 12px;
+	color: rgba(255, 255, 255, 0.50);
+	font-size: 15px;
+	font-weight: 400;
+}
