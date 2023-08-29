@@ -128,3 +128,15 @@ body {
 	pointer-events: none;
 	transition: 0.3s;
 }
+
+.input-box input {
+	color: white;
+	width: 100%;
+	height: 23px;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	padding: 0 35px 0 5px;
+	background-color: transparent;
+	border-bottom: 1px solid white;
+}
