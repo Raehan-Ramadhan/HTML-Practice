@@ -202,7 +202,7 @@ button.btn:hover {
 	font-weight: 400;
 }
 
-a:hover {
+.wrapper a:hover {
 	color: blue;
 	text-decoration: underline;
 }
