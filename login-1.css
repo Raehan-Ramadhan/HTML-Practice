@@ -165,3 +165,22 @@ label input {
 	width: 14px;
 	height: 14px;
 }
+
+.btn {
+	padding: 12px 40px;
+	border-radius: 10px;
+	border: 1px solid #fff;
+	background-color: transparent;
+	color: white;
+	font-size: 12px;
+	font-weight: 700;
+	margin: 5px 0px 5px 0px;
+	width: 100%;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+button.btn:hover {
+	color: black;
+	background-color: white;
+}
