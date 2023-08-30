@@ -237,17 +237,3 @@ button.btn:hover {
 	font-weight: 600;
 	text-decoration: none;
 }
-
-.close-btn {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 12px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 0px 20px;
-	background: rgba(20, 20, 20, 0.50);
-	cursor: pointer;
-	z-index: 1;
-}
