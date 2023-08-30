@@ -226,12 +226,12 @@ button.btn:hover {
 	font-weight: 400;
 }
 
-a:hover {
+.wrapper a:hover {
 	color: blue;
 	text-decoration: underline;
 }
 
-a {
+.wrapper a {
 	color: #fff;
 	font-size: 12px;
 	font-weight: 600;
