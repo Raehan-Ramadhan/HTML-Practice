@@ -50,7 +50,7 @@ header {
 	transform: scalex(1);
 }
 
-.navigation .btnLogin-popup {
+.wrapperbtn-open {
 	width: 130px;
 	height: 50px;
 	background-color: transparent;
@@ -65,7 +65,7 @@ header {
 	transition: 0.2s;
 }
 
-.navigation .btnLogin-popup:hover {
+.wrapperbtn-open:hover {
 	color: black;
 	background-color: white;
 }
@@ -240,7 +240,7 @@ button.btn:hover {
 	text-decoration: none;
 }
 
-.close-btn {
+.wrapperbtn-close {
 	position: absolute;
 	top: 0;
 	right: 0;
