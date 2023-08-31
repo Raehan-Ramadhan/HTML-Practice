@@ -40,4 +40,11 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 30px;
+    padding: 150px;
+}
+
+h {
+    align-self: stretch;
+    font-size: 35px;
+    font-weight: 400;
 }
