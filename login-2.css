@@ -134,6 +134,7 @@ input:not(:placeholder-shown) ~ label {
 	padding: 12px 40px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 0.50);
 	background-color: transparent;
 	font-size: 20px;
 	font-weight: 700;
@@ -146,4 +147,24 @@ input:not(:placeholder-shown) ~ label {
 button.btn:hover {
     background: rgba(0, 0, 0, 0.50);
     color: #FFF;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+p a {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+p a:hover {
+    color: #0038FF;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration-line: underline;
 }
