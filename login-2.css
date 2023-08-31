@@ -1,7 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
 body {
     height: 100vh;
     width: 100vw;
-    margin: 0;
 }
 
 .form-section {
@@ -12,7 +18,7 @@ body {
 
 .image{
     position: absolute;
-    left: 0;
+    left:   0;
     display: flex;
     width: 50%;
     height: 100%;
