@@ -86,3 +86,46 @@ h1 {
     font-size: 35px;
     font-weight: 400;
 }
+
+.input-box {
+	position: relative;
+	display: flex;
+	padding: 35px 5px 10px 5px;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 10px;
+}
+
+.input-box label {
+	position: absolute;
+	left: 5px;
+	bottom: 12px;
+	color: rgba(0, 0, 0, 0.50);
+	font-size: 16px;
+	font-weight: 400;
+	pointer-events: none;
+	transition: 0.3s;
+}
+
+.input-box input {
+	color: rgba(0, 0, 0, 0.50);
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	background-color: transparent;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.50);
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+	bottom: 35px;
+}
+
+.icon {
+	display: flex;
+	width: 20px;
+	height: 23px;
+	justify-content: center;
+	align-items: center;
+}
