@@ -38,3 +38,16 @@ body {
 	flex-direction: column;
 	gap: 10px;
 }
+
+.text-container span {
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 0.5vw;
+}
+
+h {
+	font-size: 3vw;
+}
+
+p.desc {
+    font-size: 0.7vw;
+}
