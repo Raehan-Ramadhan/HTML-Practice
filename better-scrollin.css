@@ -22,3 +22,19 @@ body {
 .right-side {
 	width: 50%;
 }
+
+.details {
+	height: 100vh;
+	border-bottom: 2px solid #000;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.text-container {
+	width: 50%;
+	padding-right: 25px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+}
