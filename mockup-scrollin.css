@@ -5,10 +5,6 @@
 	font-family: "Poppins", sans-serif;
 }
 
-body {
-	width: 100vw;
-}
-
 .gallery {
 	background-color: #b9c7ec;
 	display: flex;
