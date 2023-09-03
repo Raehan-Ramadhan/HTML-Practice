@@ -13,6 +13,10 @@
 .left-side {
 	width: 50vw;
 	height: 100vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 25px;
 }
 
 .right-side {
@@ -49,9 +53,22 @@ p.desc {
     font-size: 0.7vw;
 }
 
+.image-container {
+	width: 50%;
+	aspect-ratio: 1;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.no1 {
+	width: 100%;
+	height: 100%;	
+	background: url(https://source.unsplash.com/BvAwzPQRRis) no-repeat center/cover;
+}
+
 @media screen and (max-width: 1700px) {
 	
-	.text-container {
+	.text-container, .image-container {
 		width: 55%;
 	}
 
@@ -70,7 +87,7 @@ p.desc {
 
 @media screen and (max-width: 1025px) {
 	
-	.text-container {
+	.text-container, .image-container {
 		width: 70%;
 	}
 
@@ -89,7 +106,7 @@ p.desc {
 
 @media screen and (max-width: 750px) {
 	
-	.text-container {
+	.text-container, .image-container {
 		width: 90%;
 	}
 
