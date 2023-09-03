@@ -10,7 +10,7 @@
 	display: flex;
 }
 
-.left-side {
+.right-side {
 	width: 50vw;
 	height: 100vh;
 	display: flex;
@@ -19,7 +19,7 @@
 	padding-left: 25px;
 }
 
-.right-side {
+.left-side {
 	width: 50vw;
 }
 
