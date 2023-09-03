@@ -15,12 +15,12 @@ body {
 }
 
 .left-side {
-	width: 50%;
+	width: 50vw;
 	height: 100vh;
 }
 
 .right-side {
-	width: 50%;
+	width: 50vw;
 }
 
 .details {
@@ -40,7 +40,7 @@ body {
 }
 
 .text-container span {
-	color: rgba(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.6);
 	font-size: 0.5vw;
 }
 
@@ -51,4 +51,23 @@ h {
 
 p.desc {
     font-size: 0.7vw;
+}
+
+@media screen and (max-width: 1700px) {
+	
+	.text-container {
+		width: 55%;
+	}
+
+	.text-container span {
+		font-size: 0.7vw;
+	}
+
+	h {
+		font-size: 3vw;
+	}
+
+	p.desc {
+		font-size: 0.85vw;
+	}
 }
