@@ -1,3 +1,5 @@
+Scrollbar.init(document.querySelector('#my-scrollbar'));
+
 ScrollTrigger.create({
 	trigger:".gallery",
 	start:"top top",

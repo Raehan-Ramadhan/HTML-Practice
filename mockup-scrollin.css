@@ -5,6 +5,11 @@
 	font-family: "Poppins", sans-serif;
 }
 
+#my-scrollbar {
+	width: 100vw;
+	height: 101vh;
+}
+
 .gallery {
 	background-color: #b9c7ec;
 	display: flex;
