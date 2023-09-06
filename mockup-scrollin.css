@@ -5,9 +5,14 @@
 	font-family: "Poppins", sans-serif;
 }
 
-#my-scrollbar {
+#viewport {
 	width: 100vw;
-	height: 101vh;
+	height: 100vh;
+}
+
+.spacer {
+	width: 100vw;
+	height: 100vh;
 }
 
 .gallery {
@@ -22,6 +27,8 @@
 	justify-content: flex-start;
 	align-items: center;
 	padding-left: 25px;
+	pointer-events: none;
+	transform: translateY(0);
 }
 
 .left-side {

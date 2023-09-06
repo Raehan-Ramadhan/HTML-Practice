@@ -1,12 +1,24 @@
-var Option = {
-	'damping': 0.08
+class pin extends Scrollbar.ScrollbarPlugin {
+	static pluginName = 'pin';
+
+	onInit() {
+		document.querySelector('.right-side').style.transform = `translateY(${scrollbar.offset.y})`
+		console.log("hello world")
+		this._mount();
+	}
 }
 
-Scrollbar.init(document.querySelector('#my-scrollbar'), Option);
+const Option = {
+	'damping': 0.08,
+	plugins: {pin}
+}
+const scrollbar = Scrollbar.init(document.querySelector('#viewport'), Option);
 
-ScrollTrigger.create({
-	trigger:".gallery",
-	start:"top top",
-	end:"bottom bottom",
-	pin:".right-side"
-})
+
+
+/*
+scrollbar.addListener((status) => {
+	rightSide.style.transform = `translateY(${100})`
+	console.log(status.offset.y)
+});
+*/
