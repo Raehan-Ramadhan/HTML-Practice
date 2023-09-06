@@ -1,4 +1,8 @@
-Scrollbar.init(document.querySelector('#my-scrollbar'));
+var Option = {
+	'damping': 0.08
+}
+
+Scrollbar.init(document.querySelector('#my-scrollbar'), Option);
 
 ScrollTrigger.create({
 	trigger:".gallery",
