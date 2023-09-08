@@ -13,7 +13,8 @@ const 	colors = [
 	'#B9C7EC',
 	'#FD9BCF',
 	'#36F667',
-	'#FD9BCF'
+	'#FD9BCF',
+	'#FFFFFF'
 ]
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
@@ -28,6 +29,7 @@ function refresh() {
 		scrollbar.offset.y + detail.getBoundingClientRect().top - Math.round(window.innerHeight/2)
 	)
 	bound.unshift(0)
+	bound.push(scrollbar.offset.y + gallery.getBoundingClientRect().bottom - Math.round(window.innerHeight/2))
 
 	pinImage(scrollbar.offset)
 	getColor(scrollbar.offset)
