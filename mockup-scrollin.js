@@ -10,7 +10,12 @@ const 	gallery = document.querySelector('.gallery'),
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
+function pinImage(offset) {
+	const transform = clamp(offset.y-pintop, 0, pinbottom);
+	document.querySelector('.right-side').style.transform = `translateY(${transform}px)`
+}
+
+
 scrollbar.addListener((status) => {
-	const offset = clamp(status.offset.y-pintop, 0, pinbottom);
-	document.querySelector('.right-side').style.transform = `translateY(${offset}px)`
+	pinImage(status.offset);
 });
