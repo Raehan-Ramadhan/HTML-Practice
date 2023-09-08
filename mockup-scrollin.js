@@ -1,7 +1,7 @@
 const Option = {
 	'damping': 0.08
 }
-const scrollbar = Scrollbar.init(document.querySelector('#viewport'), Option);
+const scrollbar = Scrollbar.init(document.querySelector('#viewport'), Option)
 
 
 const 	gallery = document.querySelector('.gallery'),
@@ -16,34 +16,40 @@ const 	colors = [
 	'#FD9BCF'
 ]
 
-const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
 
+var pintop, pinbottom, bound
+function refresh() {
+	pintop = scrollbar.offset.y + gallery.getBoundingClientRect().top
+	pinbottom = scrollbar.offset.y + gallery.getBoundingClientRect().bottom - pintop - window.innerHeight
 
-var pintop = gallery.getBoundingClientRect().top,
-	pinbottom = gallery.getBoundingClientRect().bottom - pintop - window.innerHeight;
+	bound = Array.from(details).map((detail) =>
+		scrollbar.offset.y + detail.getBoundingClientRect().top - Math.round(window.innerHeight/2)
+	)
+	bound.unshift(0)
 
-var bound = Array.from(details).map((detail) =>
-	detail.getBoundingClientRect().top - Math.round(window.innerHeight/2)
-);
-bound.unshift(0)
+	pinImage(scrollbar.offset)
+	getColor(scrollbar.offset)
+}
+refresh()
+
 
 function pinImage(offset) {
-	const transform = clamp(offset.y-pintop, 0, pinbottom);
+	const transform = clamp(offset.y-pintop, 0, pinbottom)
 	document.querySelector('.right-side').style.transform = `translateY(${transform}px)`
 }
 
 function getColor(offset) {
 	for (let i = 0; i < colors.length; i++) {
-		console.log(offset.y, bound);
 		if (offset.y > bound[i]) {
-			viewport.style.backgroundColor = colors[i];
+			viewport.style.backgroundColor = colors[i]
 		}
 	}
 }
 
 
 scrollbar.addListener((status) => {
-	pinImage(status.offset);
-	getColor(status.offset);
-});
+	pinImage(status.offset)
+	getColor(status.offset)
+})
