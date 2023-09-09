@@ -1,5 +1,3 @@
-import Scrollbar from "https://cdn.skypack.dev/smooth-scrollbar@8.8.4";
-
 const Option = {
 	damping: 0.08
 };
@@ -27,8 +25,7 @@ function refresh() {
 	pinbottom =
 		scrollbar.offset.y +
 		gallery.getBoundingClientRect().bottom -
-		pintop -
-		window.innerHeight;
+		pintop - window.innerHeight;
 
 	bound = Array.from(details).map(
 		(detail) =>
@@ -50,29 +47,42 @@ function refresh() {
 refresh();
 
 function pinImage(offset) {
-	const transform = clamp(offset.y - pintop, 0, pinbottom);
-	document.querySelector(
-		".right-side"
-	).style.transform = `translateY(${transform}px)`;
+    // Calculate the transformed translateY value using clamp
+    const transform = clamp(offset.y - pintop, 0, pinbottom);
+
+    // Apply the transform to the element with class "right-side"
+    document.querySelector(".right-side").style.transform = `translateY(${transform}px)`;
 }
+
 
 function getColor(offset) {
-	for (let i = 0; i < colors.length; i++) {
-		if (offset.y > bound[i]) {
-			viewport.style.backgroundColor = colors[i];
-		}
-	}
+
+	// Iterate through the colors and bound arrays in reverse order
+    for (let i = colors.length - 1; i >= 0; i--) {
+        if (offset.y > bound[i]) {
+            viewport.style.backgroundColor = colors[i];
+            return; // Exit the loop once a match is found
+        }
+    }
 }
 
+
+const totalImages = images.length;
+const maxA = (totalImages - 1) * 100;
 function clipImage(offset) {
-	var a = Math.round(
-		((offset.y - pintop) / pinbottom) * 100 * (images.length - 1)
-	);
-	a = clamp(a, 0, (images.length - 1) * 100);
-	images.forEach(function (Val, Index) {
-		Val.style.clipPath = `inset(0 0 ${a - Index * 100}% 0)`;
-	});
+
+    // Calculate 'a' based on the offset, pintop, and pinbottom
+    let a = Math.round(((offset.y - pintop) / pinbottom) * 100);
+
+    // Clamp 'a' to ensure it stays within a valid range
+    a = Math.min(Math.max(a, 0), maxA);
+
+    // Apply the clipPath to each image using a single loop
+    images.forEach((Val, Index) => {
+        Val.style.clipPath = `inset(0 0 ${Math.max(a - Index * 100, 0)}% 0)`;
+    });
 }
+
 
 scrollbar.addListener((status) => {
 	pinImage(status.offset);
