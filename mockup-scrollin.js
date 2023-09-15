@@ -1,7 +1,10 @@
+import Scrollbar from "https://cdn.skypack.dev/smooth-scrollbar@8.8.4";
+
 const Option = {
 	damping: 0.08
 };
 const scrollbar = Scrollbar.init(document.querySelector("#viewport"), Option);
+
 
 const gallery = document.querySelector(".gallery"),
 	viewport = document.querySelector("#viewport"),
@@ -16,6 +19,10 @@ const colors = [
 	"#FD9BCF",
 	"#FFFFFF"
 ];
+
+const totalImages = images.length;
+const maxA = (totalImages - 1) * 100;
+
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
@@ -46,6 +53,7 @@ function refresh() {
 }
 refresh();
 
+
 function pinImage(offset) {
     // Calculate the transformed translateY value using clamp
     const transform = clamp(offset.y - pintop, 0, pinbottom);
@@ -53,7 +61,6 @@ function pinImage(offset) {
     // Apply the transform to the element with class "right-side"
     document.querySelector(".right-side").style.transform = `translateY(${transform}px)`;
 }
-
 
 function getColor(offset) {
 
@@ -66,13 +73,10 @@ function getColor(offset) {
     }
 }
 
-
-const totalImages = images.length;
-const maxA = (totalImages - 1) * 100;
 function clipImage(offset) {
 
     // Calculate 'a' based on the offset, pintop, and pinbottom
-    let a = Math.round(((offset.y - pintop) / pinbottom) * 100);
+    let a = Math.round(((offset.y - pintop) / pinbottom) * maxA);
 
     // Clamp 'a' to ensure it stays within a valid range
     a = Math.min(Math.max(a, 0), maxA);
